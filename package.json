@@ -1,0 +1,17 @@
+{
+  "name": "professional-sleeper-protocol-deploy",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/vercel-build.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "adm-zip": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest"
+  }
+}
