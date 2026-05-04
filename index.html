@@ -1,0 +1,240 @@
+﻿<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Smoking - Revino in control</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" id="start">
+        <div class="hero-copy">
+          <p class="eyebrow">Companion de revenire fara rusine</p>
+          <h1>Observa. Intelege. Alege. Revii.</h1>
+          <p class="lede">
+            Aplicatia te ajuta sa transformi un moment dificil intr-un pas clar pentru
+            urmatoarele 24-72 de ore, fara promisiuni exagerate si fara ton punitiv.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#quickstart">Primii 2 pasi</a>
+            <a class="button secondary" href="#checkin">Daily check-in</a>
+            <a class="button secondary" href="#quiz">Autoevaluare</a>
+            <a class="button secondary" href="#report">Raport final</a>
+          </div>
+        </div>
+        <div class="return-orbit" aria-label="Bucla centrala">
+          <div class="orbit-core">
+            <span>observa</span>
+            <span>intelege</span>
+            <span>alege</span>
+            <span>revii</span>
+          </div>
+        </div>
+      </section>
+
+      <nav class="section-nav" aria-label="Sectiuni principale">
+        <a href="#quickstart">Start</a>
+        <a href="#map">Bucla</a>
+        <a href="#knowledge">Teorie</a>
+        <a href="#protocol">Protocol</a>
+        <a href="#panic">Modul panica</a>
+        <a href="#checkin">Tracking</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#report">Raport</a>
+      </nav>
+
+      <section class="band" id="quickstart">
+        <div class="section-heading">
+          <p class="eyebrow">Onboarding clar</p>
+          <h2>Ce faci prima data</h2>
+          <p>1) setezi decizia de azi; 2) completezi check-in-ul de 2 minute.</p>
+        </div>
+        <div class="loop-grid">
+          <article><strong>Pasul 1</strong><p>Seteaza data deciziei si vezi ritmul curent.</p></article>
+          <article><strong>Pasul 2</strong><p>Completeaza check-in-ul zilnic (pofta, stres, energie).</p></article>
+          <article><strong>Pasul 3</strong><p>Noteaza un craving cand apare.</p></article>
+          <article><strong>Pasul 4</strong><p>Primesti focus clar pentru urmatoarele zile.</p></article>
+        </div>
+      </section>
+
+      <section class="band intro-band" id="map">
+        <div class="section-heading">
+          <p class="eyebrow">Modelul produsului</p>
+          <h2>Recaderea este o bucla, nu o identitate.</h2>
+          <p>Cand bucla este vizibila, poate fi intrerupta cu un pas concret.</p>
+        </div>
+        <div class="loop-grid">
+          <article><strong>1. Trigger</strong><p>Context intern/extern care aprinde pofta.</p></article>
+          <article><strong>2. Poveste</strong><p>"Acum am nevoie" pare singura varianta.</p></article>
+          <article><strong>3. Reactie</strong><p>Automatismul preia controlul.</p></article>
+          <article><strong>4. Revenire</strong><p>Un pas mic opreste repetarea.</p></article>
+        </div>
+      </section>
+
+      <section class="band" id="streak">
+        <div class="section-heading">
+          <p class="eyebrow">Decizia mea</p>
+          <h2>Zile curate, fara teatru de pedeapsa.</h2>
+          <p>Streak-ul este informatie, nu identitate.</p>
+        </div>
+        <div class="streak-system">
+          <form class="streak-card" id="streakForm">
+            <label for="decisionDate">Data deciziei</label>
+            <input id="decisionDate" name="decisionDate" type="date" required />
+            <p class="field-help">Daca ai fumat, repornesti azi si pastrezi ce ai invatat.</p>
+            <div class="form-actions">
+              <button type="submit">Salveaza decizia</button>
+              <button type="button" id="todayButton">Incep azi</button>
+            </div>
+          </form>
+          <div class="streak-card streak-readout" id="streakReadout">
+            <p class="empty-state">Seteaza data deciziei ca sa vezi streak-ul.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" id="knowledge">
+        <div class="section-heading">
+          <p class="eyebrow">Cunoastere aplicata</p>
+          <h2>Citeste pe scurt sau aprofundeaza.</h2>
+          <p>Fiecare modul raspunde la: ce invat si ce fac azi.</p>
+        </div>
+        <div id="knowledgeGrid" class="knowledge-grid"></div>
+      </section>
+
+      <section class="band" id="protocol">
+        <div class="section-heading">
+          <p class="eyebrow">Protocol practic</p>
+          <h2>Plan pentru craving, stres si revenire.</h2>
+          <p>Alege protocolul care se potriveste situatiei de acum.</p>
+        </div>
+        <div id="protocolGrid" class="action-grid"></div>
+      </section>
+
+      <section class="band" id="panic">
+        <div class="section-heading">
+          <p class="eyebrow">Interventie de urgenta</p>
+          <h2>Modul panica pentru sevraj intens</h2>
+          <p>Trei niveluri progresive. Daca primul nu ajunge, urci controlat la urmatorul.</p>
+        </div>
+        <div id="panicModule"></div>
+      </section>
+
+      <section class="band split" id="checkin">
+        <div class="section-heading">
+          <p class="eyebrow">Daily check-in (sub 2 minute)</p>
+          <h2>Urmareste semnalele care conteaza.</h2>
+          <p>Scurt, util, fara birocratie.</p>
+        </div>
+        <form class="quiz" id="dailyForm">
+          <fieldset class="question">
+            <h3>Pofta medie azi (0-10)</h3>
+            <input type="range" min="0" max="10" value="4" id="urgeLevel" />
+            <p id="urgeLevelValue">4</p>
+          </fieldset>
+          <fieldset class="question">
+            <h3>Stres (0-10)</h3>
+            <input type="range" min="0" max="10" value="4" id="stressLevel" />
+            <p id="stressLevelValue">4</p>
+          </fieldset>
+          <fieldset class="question">
+            <h3>Energie (0-10)</h3>
+            <input type="range" min="0" max="10" value="5" id="energyLevel" />
+            <p id="energyLevelValue">5</p>
+          </fieldset>
+          <fieldset class="question">
+            <h3>Trigger principal</h3>
+            <select id="mainTrigger" required>
+              <option value="stres">Stres</option>
+              <option value="plictiseala">Plictiseala</option>
+              <option value="social">Social</option>
+              <option value="cafea">Cafea</option>
+              <option value="alcool">Alcool</option>
+              <option value="dimineata">Dimineata</option>
+            </select>
+          </fieldset>
+          <fieldset class="question">
+            <h3>Intentia pentru urmatoarele 12h</h3>
+            <input type="text" id="nextIntent" maxlength="120" placeholder="Ex: protejez urmatoarea pauza." required />
+          </fieldset>
+          <div class="form-actions">
+            <button type="submit">Salveaza check-in</button>
+          </div>
+          <p class="copy-status" id="dailyStatus" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="band" id="craving">
+        <div class="section-heading">
+          <p class="eyebrow">Craving log</p>
+          <h2>Noteaza pofta cand apare.</h2>
+        </div>
+        <form class="quiz" id="cravingForm">
+          <div class="inline-grid">
+            <label>Trigger
+              <input type="text" id="cravingTrigger" required maxlength="80" placeholder="Ex: cafea la birou" />
+            </label>
+            <label>Intensitate (0-10)
+              <input type="number" id="cravingIntensity" min="0" max="10" required />
+            </label>
+            <label>Reactie
+              <select id="cravingAction" required>
+                <option value="am amanat">Am amanat</option>
+                <option value="am folosit coping">Am folosit coping</option>
+                <option value="am fumat">Am fumat</option>
+              </select>
+            </label>
+            <label>Rezultat dupa 10 minute
+              <input type="text" id="cravingOutcome" maxlength="120" required />
+            </label>
+          </div>
+          <div class="form-actions">
+            <button type="submit">Adauga craving</button>
+          </div>
+          <p class="copy-status" id="cravingStatus" aria-live="polite"></p>
+        </form>
+        <div class="report" id="cravingList">
+          <p class="empty-state">Nu exista craving-uri logate.</p>
+        </div>
+      </section>
+
+      <section class="band split" id="quiz">
+        <div class="section-heading">
+          <p class="eyebrow">Autoevaluare</p>
+          <h2>Quick / Standard / Deep</h2>
+          <p>Quiz educativ cu feedback pe raspuns si profil de risc.</p>
+          <div class="hero-actions quiz-modes" id="quizModePicker">
+            <button type="button" class="mode-btn" data-mode="quick">Quick</button>
+            <button type="button" class="mode-btn" data-mode="standard">Standard</button>
+            <button type="button" class="mode-btn" data-mode="deep">Deep</button>
+          </div>
+        </div>
+        <form class="quiz" id="quizForm"></form>
+      </section>
+
+      <section class="band report-band" id="report">
+        <div class="section-heading">
+          <p class="eyebrow">Raport final</p>
+          <h2>Puncte forte, vulnerabilitati, focus clar.</h2>
+          <p>Raportul foloseste datele din quiz + tracking.</p>
+        </div>
+        <div class="report" id="reportPanel">
+          <p class="empty-state">Completeaza quiz-ul ca sa primesti raportul personalizat.</p>
+        </div>
+      </section>
+
+      <section class="source-note">
+        <strong>Limita importanta:</strong>
+        Acest app nu inlocuieste consilierea medicala. Daca sevrajul, anxietatea,
+        simptomele fizice sau recaderile repetate devin greu de gestionat,
+        cauta sprijin de la un medic, farmacist, consilier sau o linie specializata.
+      </section>
+    </main>
+    <script src="content-data.js"></script>
+    <script src="app-utils.js"></script>
+    <script src="report-engine.js"></script>
+    <script src="ui-renderers.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
